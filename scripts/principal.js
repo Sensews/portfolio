@@ -4,14 +4,14 @@ class PortfolioApp {
         this.inicializado = false;
         this.inicializar();
     }
-    
-    // Inicializar aplicação
+      // Inicializar aplicação
     inicializar() {
         if (this.inicializado) return;
         
         this.configurarFormularioContato();
         this.configurarNavegacaoMobile();
         this.configurarScrollHeader();
+        this.configurarNavegacaoAtiva();
         this.configurarTecladoNavegacao();
         this.adicionarEfeitosPersonalizados();
         
@@ -227,22 +227,61 @@ class PortfolioApp {
         setTimeout(() => {
             if (document.body.contains(notificacao)) {
                 notificacao.remove();
-            }
-        }, 300);
+            }        }, 300);
     }
     
-    // Configurar navegação mobile (se necessário)
+    // Configurar navegação mobile
     configurarNavegacaoMobile() {
-        // Para futuras melhorias de responsividade
-        const menuToggle = document.createElement('button');
-        menuToggle.className = 'menu-toggle';
-        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        menuToggle.style.display = 'none'; // Por enquanto escondido
+        const menuMobile = document.getElementById('menuMobile');
+        const menuNavegacao = document.querySelector('.menu-navegacao');
+        const overlayMenu = document.getElementById('overlayMenu');
         
-        // Adicionar funcionalidade quando necessário
+        if (!menuMobile || !menuNavegacao || !overlayMenu) return;
+        
+        // Toggle do menu mobile
+        menuMobile.addEventListener('click', () => {
+            menuMobile.classList.toggle('ativo');
+            menuNavegacao.classList.toggle('ativo');
+            overlayMenu.classList.toggle('ativo');
+            document.body.classList.toggle('menu-aberto');
+        });
+        
+        // Fechar menu ao clicar no overlay
+        overlayMenu.addEventListener('click', () => {
+            this.fecharMenuMobile();
+        });
+        
+        // Fechar menu ao clicar em um link
+        const linksMenu = menuNavegacao.querySelectorAll('a');
+        linksMenu.forEach(link => {
+            link.addEventListener('click', () => {
+                this.fecharMenuMobile();
+            });
+        });
+        
+        // Fechar menu com ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                this.fecharMenuMobile();
+            }
+        });
+        
+        // Ajustar layout quando redimensionar
         window.addEventListener('resize', () => {
             this.ajustarLayoutMobile();
         });
+    }
+    
+    // Fechar menu mobile
+    fecharMenuMobile() {
+        const menuMobile = document.getElementById('menuMobile');
+        const menuNavegacao = document.querySelector('.menu-navegacao');
+        const overlayMenu = document.getElementById('overlayMenu');
+        
+        if (menuMobile) menuMobile.classList.remove('ativo');
+        if (menuNavegacao) menuNavegacao.classList.remove('ativo');
+        if (overlayMenu) overlayMenu.classList.remove('ativo');
+        document.body.classList.remove('menu-aberto');
     }
     
     // Ajustar layout para mobile
@@ -279,9 +318,39 @@ class PortfolioApp {
             } else {
                 header.classList.remove('scrolled');
             }
-            
-            ultimoScroll = scrollAtual;
+              ultimoScroll = scrollAtual;
         });
+    }
+    
+    // Configurar navegação ativa baseada na seção atual
+    configurarNavegacaoAtiva() {
+        const secoes = document.querySelectorAll('section[id]');
+        const linksNavegacao = document.querySelectorAll('.menu-navegacao a[href^="#"]');
+        
+        if (!secoes.length || !linksNavegacao.length) return;
+        
+        const observador = new IntersectionObserver((entradas) => {
+            entradas.forEach(entrada => {
+                if (entrada.isIntersecting) {
+                    const id = entrada.target.id;
+                    
+                    // Remover classe ativo de todos os links
+                    linksNavegacao.forEach(link => link.classList.remove('ativo'));
+                    
+                    // Adicionar classe ativo ao link correspondente
+                    const linkAtivo = document.querySelector(`.menu-navegacao a[href="#${id}"]`);
+                    if (linkAtivo) {
+                        linkAtivo.classList.add('ativo');
+                    }
+                }
+            });
+        }, {
+            rootMargin: '-20% 0px -70% 0px',
+            threshold: 0.1
+        });
+        
+        // Observar todas as seções
+        secoes.forEach(secao => observador.observe(secao));
     }
     
     // Configurar navegação por teclado

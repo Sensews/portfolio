@@ -7,31 +7,43 @@
     <link rel="stylesheet" href="styles/estilo-principal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Header -->
     <header id="cabecalho">
-        <nav class="navegacao">        <div class="logo">
-            <i class="fas fa-graduation-cap"></i>
-            <span data-pt="João Pedro" data-en="João Pedro">João Pedro</span>
-        </div>
-                  <ul class="menu-navegacao">
-            <li><a href="#inicio" data-pt="Início" data-en="Home">Início</a></li>
-            <li><a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
-            <li><a href="#formacao" data-pt="Formação" data-en="Education">Formação</a></li>
-            <li><a href="#habilidades" data-pt="Habilidades" data-en="Skills">Habilidades</a></li>
-            <li><a href="#projetos" data-pt="Projetos" data-en="Projects">Projetos</a></li>
-            <li><a href="#certificacoes" data-pt="Certificações" data-en="Certifications">Certificações</a></li>
-            <li><a href="#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
-        </ul>
+        <nav class="navegacao">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span data-pt="João Pedro" data-en="João Pedro">João Pedro</span>
+            </div>
             
-            <button class="botao-configuracoes" id="botaoConfig">
-                <i class="fas fa-cog"></i>
-            </button>
+            <ul class="menu-navegacao">
+                <li><a href="#inicio" data-pt="Início" data-en="Home">Início</a></li>
+                <li><a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
+                <li><a href="#formacao" data-pt="Formação" data-en="Education">Formação</a></li>
+                <li><a href="#habilidades" data-pt="Habilidades" data-en="Skills">Habilidades</a></li>
+                <li><a href="#projetos" data-pt="Projetos" data-en="Projects">Projetos</a></li>
+                <li><a href="#certificacoes" data-pt="Certificações" data-en="Certifications">Certificações</a></li>
+                <li><a href="#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
+            </ul>
+            
+            <div class="controles-header">
+                <button class="menu-mobile" id="menuMobile">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <button class="botao-configuracoes" id="botaoConfig">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
         </nav>
     </header>
+
+    <!-- Overlay do menu mobile -->
+    <div class="overlay-menu" id="overlayMenu"></div>
 
     <!-- Modal de Configurações -->
     <div id="modalConfiguracoes" class="modal">
@@ -274,57 +286,7 @@
         <section id="projetos" class="secao-projetos">
             <div class="container">
                 <h2 class="titulo-secao" data-pt="Projetos Acadêmicos" data-en="Academic Projects">Projetos Acadêmicos</h2>
-                <div class="grid-projetos">
-                    <!-- Template para projeto -->
-                    <div class="card-projeto template-projeto">
-                        <div class="imagem-projeto">
-                            <div class="projeto-placeholder">
-                                <i class="fas fa-plus"></i>
-                                <p data-pt="Adicionar Projeto" data-en="Add Project">Adicionar Projeto</p>
-                            </div>
-                            <!-- Descomente e adicione imagem do projeto aqui -->
-                            <!-- <img src="assets/projeto1.jpg" alt="Nome do Projeto"> -->
-                        </div>
-                        <div class="conteudo-projeto">
-                            <h3 data-pt="[Nome do Projeto]" data-en="[Project Name]">[Nome do Projeto]</h3>
-                            <p data-pt="[Descrição do projeto acadêmico - explique brevemente o que foi desenvolvido e quais foram os objetivos]" data-en="[Academic project description - briefly explain what was developed and what were the objectives]">[Descrição do projeto acadêmico - explique brevemente o que foi desenvolvido e quais foram os objetivos]</p>
-                            <div class="tecnologias">
-                                <span>[Tecnologia 1]</span>
-                                <span>[Tecnologia 2]</span>
-                                <span>[Tecnologia 3]</span>
-                            </div>
-                            <div class="links-projeto">
-                                <a href="#" class="link-github" data-pt="Ver Código" data-en="View Code">
-                                    <i class="fab fa-github"></i> Ver Código
-                                </a>
-                                <a href="#" class="link-demo" data-pt="Ver Demo" data-en="View Demo">
-                                    <i class="fas fa-external-link-alt"></i> Ver Demo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card-projeto">
-                        <div class="imagem-projeto">
-                            <i class="fab fa-python"></i>
-                        </div>
-                        <div class="conteudo-projeto">
-                            <h3 data-pt="Sistema de Gerenciamento de Senhas" data-en="Password Management System">Sistema de Gerenciamento de Senhas</h3>
-                            <p data-pt="Aplicação Python para armazenamento seguro de senhas com criptografia AES e interface gráfica." data-en="Python application for secure password storage with AES encryption and graphical interface.">Aplicação Python para armazenamento seguro de senhas com criptografia AES e interface gráfica.</p>
-                            <div class="tecnologias">
-                                <span>Python</span>
-                                <span>Tkinter</span>
-                                <span>Cryptography</span>
-                            </div>
-                            <div class="links-projeto">
-                                <a href="#" class="link-github" data-pt="Ver Código" data-en="View Code">
-                                    <i class="fab fa-github"></i> Ver Código
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card-projeto">
+                <div class="grid-projetos">                    <div class="card-projeto">
                         <div class="imagem-projeto">
                             <i class="fas fa-globe"></i>
                         </div>
@@ -337,31 +299,11 @@
                                 <span>JavaScript</span>
                             </div>
                             <div class="links-projeto">
-                                <a href="#" class="link-github" data-pt="Ver Código" data-en="View Code">
+                                <a href="https://github.com/Sensews/portfolio" class="link-github" data-pt="Ver Código" data-en="View Code" target="_blank">
                                     <i class="fab fa-github"></i> Ver Código
                                 </a>
-                                <a href="#" class="link-demo" data-pt="Ver Site" data-en="View Site">
+                                <a href="#inicio" class="link-demo" data-pt="Ver Site" data-en="View Site">
                                     <i class="fas fa-external-link-alt"></i> Ver Site
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card-projeto">
-                        <div class="imagem-projeto">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <div class="conteudo-projeto">
-                            <h3 data-pt="Sistema de Biblioteca" data-en="Library System">Sistema de Biblioteca</h3>
-                            <p data-pt="Aplicação Java para gerenciamento de bibliotecas com banco de dados MySQL e interface Swing." data-en="Java application for library management with MySQL database and Swing interface.">Aplicação Java para gerenciamento de bibliotecas com banco de dados MySQL e interface Swing.</p>
-                            <div class="tecnologias">
-                                <span>Java</span>
-                                <span>MySQL</span>
-                                <span>Swing</span>
-                            </div>
-                            <div class="links-projeto">
-                                <a href="#" class="link-github" data-pt="Ver Código" data-en="View Code">
-                                    <i class="fab fa-github"></i> Ver Código
                                 </a>
                             </div>
                         </div>
@@ -373,47 +315,15 @@
         <!-- Seção Certificações -->
         <section id="certificacoes" class="secao-certificacoes">
             <div class="container">
-                <h2 class="titulo-secao" data-pt="Certificações" data-en="Certifications">Certificações</h2>
-                <div class="grid-certificacoes">
-                    <!-- Template para certificação -->
-                    <div class="card-certificacao template-certificacao">
-                        <div class="badge-certificacao">
-                            <div class="certificacao-placeholder">
-                                <i class="fas fa-certificate"></i>
-                                <p data-pt="Adicionar Certificação" data-en="Add Certification">Adicionar Certificação</p>
-                            </div>
-                        </div>
-                        <div class="info-certificacao">
-                            <h3 data-pt="[Nome da Certificação]" data-en="[Certification Name]">[Nome da Certificação]</h3>
-                            <p class="emissor" data-pt="[Instituição Emissora]" data-en="[Issuing Institution]">[Instituição Emissora]</p>
-                            <p class="data-certificacao" data-pt="[Data de Emissão]" data-en="[Issue Date]">[Data de Emissão]</p>
-                            <div class="acoes-certificacao">
-                                <a href="#" class="link-verificar" data-pt="Verificar Certificado" data-en="Verify Certificate">
-                                    <i class="fas fa-check-circle"></i> Verificar
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
+                <h2 class="titulo-secao" data-pt="Certificações" data-en="Certifications">Certificações</h2>                <div class="grid-certificacoes">
                     <div class="card-certificacao em-progresso">
                         <div class="badge-certificacao">
-                            <i class="fas fa-graduation-cap"></i>
+                            <i class="fab fa-google"></i>
                         </div>
                         <div class="info-certificacao">
-                            <h3 data-pt="CompTIA Security+" data-en="CompTIA Security+">CompTIA Security+</h3>
-                            <p class="emissor">CompTIA</p>
-                            <p class="status" data-pt="Em preparação - Previsão: Junho 2025" data-en="In preparation - Expected: June 2025">Em preparação - Previsão: Junho 2025</p>
-                        </div>
-                    </div>
-
-                    <div class="card-certificacao em-progresso">
-                        <div class="badge-certificacao">
-                            <i class="fab fa-aws"></i>
-                        </div>
-                        <div class="info-certificacao">
-                            <h3 data-pt="AWS Cloud Practitioner" data-en="AWS Cloud Practitioner">AWS Cloud Practitioner</h3>
-                            <p class="emissor">Amazon Web Services</p>
-                            <p class="status" data-pt="Planejado para 2025" data-en="Planned for 2025">Planejado para 2025</p>
+                            <h3 data-pt="Google Cybersecurity Certificate" data-en="Google Cybersecurity Certificate">Google Cybersecurity Certificate</h3>
+                            <p class="emissor">Coursera - Google</p>
+                            <p class="status" data-pt="Em progresso" data-en="In progress">Em progresso</p>
                         </div>
                     </div>
 
@@ -436,20 +346,21 @@
                 <div class="conteudo-contato">
                     <div class="info-contato">
                         <h3 data-pt="Vamos conversar!" data-en="Let's talk!">Vamos conversar!</h3>
-                        <p data-pt="Estou sempre aberto a novas oportunidades de aprendizado, projetos acadêmicos e networking profissional." data-en="I'm always open to new learning opportunities, academic projects, and professional networking.">Estou sempre aberto a novas oportunidades de aprendizado, projetos acadêmicos e networking profissional.</p>
-                        
-                        <div class="contatos">
+                        <p data-pt="Estou sempre aberto a novas oportunidades de aprendizado, projetos acadêmicos e networking profissional." data-en="I'm always open to new learning opportunities, academic projects, and professional networking.">Estou sempre aberto a novas oportunidades de aprendizado, projetos acadêmicos e networking profissional.</p>                          <div class="contatos">
                             <div class="contato-item">
                                 <i class="fas fa-envelope"></i>
-                                <span>joao.pedro@estudante.pucpr.br</span>
+                                <a href="mailto:jpedrocwb@gmail.com">jpedrocwb@gmail.com</a>
                             </div>
                             <div class="contato-item">
                                 <i class="fab fa-linkedin"></i>
-                                <span>linkedin.com/in/joaopedro-cybersec</span>
+                                <a href="https://www.linkedin.com/in/joaopedro-moreira/" target="_blank">linkedin.com/in/joaopedro-moreira</a>
                             </div>
                             <div class="contato-item">
                                 <i class="fab fa-github"></i>
-                                <span>github.com/joaopedro-cyber</span>
+                                <a href="https://github.com/Sensews" target="_blank">github.com/Sensews</a>
+                            </div>                            <div class="contato-item">
+                                <i class="fab fa-discord"></i>
+                                <span>Discord: sensew</span>
                             </div>
                             <div class="contato-item">
                                 <i class="fas fa-map-marker-alt"></i>
@@ -490,11 +401,9 @@
                 <div class="logo-rodape">
                     <i class="fas fa-graduation-cap"></i>
                     <span data-pt="João Pedro Moreira" data-en="João Pedro Moreira">João Pedro Moreira</span>
-                </div>
-                <div class="redes-sociais">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>                <div class="redes-sociais">
+                    <a href="https://www.linkedin.com/in/joaopedro-moreira/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Sensews" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
                 </div>
             </div>
