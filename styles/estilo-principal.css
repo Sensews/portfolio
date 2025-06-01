@@ -234,6 +234,7 @@ body.menu-aberto {
     height: 48px;
     position: relative;
     overflow: hidden;
+    margin-left: 10px;
 }
 
 .botao-configuracoes::before {
@@ -1339,7 +1340,7 @@ body.menu-aberto {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: start;
+    align-items: stretch;
 }
 
 /* Informações Principais do Curso */
@@ -1356,7 +1357,8 @@ body.menu-aberto {
     box-shadow: var(--sombra-card);
     transition: var(--transicao-padrao);
     height: 100%;
-    min-height: 600px;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-curso-principal:hover {
@@ -1548,7 +1550,7 @@ body.menu-aberto {
     background: var(--cor-fundo-secundario);
     border: 1px solid var(--cor-borda);
     border-radius: 16px;
-    padding: 2.5rem;
+    padding: 2rem;
     box-shadow: var(--sombra-card);
     transition: var(--transicao-padrao);
     height: 100%;
