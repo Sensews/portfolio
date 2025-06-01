@@ -138,10 +138,10 @@ class GerenciadorAnimacoes {
             elemento.textContent = Math.floor(valorAtual);
         }, 16);
     }
-    
-    // Animação das barras de progresso
+      // Animação das barras de progresso
     animarBarrasProgresso() {
         const barrasProgresso = document.querySelectorAll('.progresso');
+        const barrasProgressoCurso = document.querySelectorAll('.progresso-preenchido');
         
         const observadorBarras = new IntersectionObserver((entradas) => {
             entradas.forEach(entrada => {
@@ -156,7 +156,13 @@ class GerenciadorAnimacoes {
             });
         }, { threshold: 0.5 });
         
+        // Observar barras de habilidades
         barrasProgresso.forEach(barra => {
+            observadorBarras.observe(barra);
+        });
+        
+        // Observar barras de progresso do curso
+        barrasProgressoCurso.forEach(barra => {
             observadorBarras.observe(barra);
         });
     }

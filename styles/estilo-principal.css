@@ -868,15 +868,19 @@ body.menu-aberto {
 
 .conteudo-sobre {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 4rem;
-    align-items: center;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
 }
 
 .texto-sobre p {
     font-size: 1.1rem;
     line-height: 1.8;
     color: var(--cor-texto-secundario);
+    margin-bottom: 2rem;
+}
+
+.texto-sobre p:last-of-type {
     margin-bottom: 3rem;
 }
 
@@ -1314,11 +1318,32 @@ body.menu-aberto {
 .secao-formacao {
     padding: 6rem 0;
     background: var(--cor-fundo);
+    position: relative;
+    overflow: hidden;
+}
+
+.secao-formacao::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 25% 25%, rgba(0, 255, 136, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(0, 255, 136, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.conteudo-formacao {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
 }
 
 .timeline-formacao {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 100%;
     position: relative;
 }
 
@@ -1372,6 +1397,12 @@ body.menu-aberto {
     border-radius: 12px;
     padding: 2rem;
     box-shadow: var(--sombra-card);
+    transition: var(--transicao-padrao);
+}
+
+.conteudo-timeline:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-cyber);
 }
 
 .conteudo-timeline h3 {
@@ -1411,6 +1442,174 @@ body.menu-aberto {
     border-radius: 16px;
     font-size: 0.85rem;
     font-weight: 500;
+    transition: var(--transicao-padrao);
+}
+
+.lista-materias span:hover {
+    background: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    transform: translateY(-2px);
+}
+
+/* Experiência Acadêmica - Coluna da direita */
+.experiencia-academica {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-experiencia {
+    background: var(--cor-fundo-secundario);
+    border: 1px solid var(--cor-borda);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: var(--sombra-card);
+    transition: var(--transicao-padrao);
+    height: 100%;
+}
+
+.card-experiencia:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-cyber);
+}
+
+.icone-experiencia {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--gradiente-secundario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    font-size: 2.5rem;
+    color: var(--cor-primaria);
+    animation: pulse-icon 3s ease-in-out infinite;
+}
+
+@keyframes pulse-icon {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.card-experiencia h3 {
+    font-family: var(--fonte-primaria);
+    color: var(--cor-secundaria);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.texto-experiencia p {
+    color: var(--cor-texto-secundario);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+.texto-experiencia h4 {
+    font-family: var(--fonte-primaria);
+    color: var(--cor-secundaria);
+    margin: 2rem 0 1rem 0;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.texto-experiencia h4::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--cor-secundaria);
+    border-radius: 1px;
+}
+
+.texto-experiencia ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.texto-experiencia li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    color: var(--cor-texto-secundario);
+    line-height: 1.6;
+}
+
+.texto-experiencia li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: var(--cor-secundaria);
+    font-size: 0.8rem;
+    top: 0.2rem;
+}
+
+/* Progresso do Curso */
+.progresso-curso {
+    background: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.info-progresso {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.info-progresso span:first-child {
+    font-weight: 600;
+    color: var(--cor-texto);
+}
+
+.percentual {
+    font-family: var(--fonte-primaria);
+    color: var(--cor-secundaria);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.barra-progresso-curso {
+    width: 100%;
+    height: 10px;
+    background: var(--cor-borda);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.progresso-preenchido {
+    height: 100%;
+    background: var(--gradiente-secundario);
+    border-radius: 5px;
+    width: 0%;
+    transition: width 2s ease-in-out;
+    position: relative;
+}
+
+.progresso-preenchido::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shine 2s infinite;
+}
+
+.status-curso {
+    color: var(--cor-texto-secundario);
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 0;
 }
 
 /* Seção Certificações */
@@ -1590,16 +1789,17 @@ body.menu-aberto {
 .foto-pessoal {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding-top: 2rem;
 }
 
 .container-foto {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     overflow: hidden;
     position: relative;
-    border: 4px solid var(--cor-secundaria);
+    border: 3px solid var(--cor-secundaria);
     box-shadow: var(--sombra-cyber);
 }
 
@@ -1667,6 +1867,12 @@ body.menu-aberto {
 
 /* Responsividade para novas seções */
 @media (max-width: 768px) {
+    /* Formação Acadêmica - Mobile */
+    .conteudo-formacao {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
     .timeline-formacao::before {
         left: 20px;
     }
@@ -1695,6 +1901,32 @@ body.menu-aberto {
         margin-bottom: 1rem;
     }
     
+    .card-experiencia {
+        padding: 2rem;
+        margin-top: 2rem;
+    }
+    
+    .icone-experiencia {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .card-experiencia h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .texto-experiencia h4 {
+        font-size: 1.1rem;
+        margin: 1.5rem 0 1rem 0;
+    }
+    
+    .progresso-curso {
+        padding: 1rem;
+    }
+    
     .container-foto {
         width: 200px;
         height: 200px;
@@ -1716,5 +1948,91 @@ body.menu-aberto {
     
     .links-projeto {
         flex-direction: column;
+    }
+    
+    .conteudo-sobre {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .foto-pessoal {
+        order: -1;
+    }
+    
+    .texto-sobre p {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Responsividade para tablets */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .conteudo-formacao {
+        gap: 3rem;
+    }
+    
+    .card-experiencia {
+        padding: 2rem;
+    }
+    
+    .icone-experiencia {
+        width: 70px;
+        height: 70px;
+        font-size: 2.2rem;
+    }
+    
+    .card-experiencia h3 {
+        font-size: 1.4rem;
+    }
+    
+    .texto-experiencia h4 {
+        font-size: 1.15rem;
+    }
+}
+
+/* Efeitos adicionais para a seção de formação */
+.conteudo-timeline:hover .lista-materias span {
+    transform: translateY(-1px);
+}
+
+.texto-experiencia li:hover {
+    color: var(--cor-texto);
+    padding-left: 2.2rem;
+    transition: all 0.3s ease;
+}
+
+.texto-experiencia li:hover::before {
+    color: var(--cor-secundaria);
+    transform: scale(1.2);
+}
+
+/* Animação de entrada para os elementos */
+.card-experiencia {
+    animation: slideInRight 0.6s ease-out;
+}
+
+.conteudo-timeline {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
