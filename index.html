@@ -142,16 +142,9 @@
         <section id="sobre" class="secao-sobre">
             <div class="container">
                 <h2 class="titulo-secao" data-pt="Sobre Mim" data-en="About Me">Sobre Mim</h2>
-                <div class="conteudo-sobre">
-                    <div class="foto-pessoal">
-                        <!-- Template para foto pessoal -->
+                <div class="conteudo-sobre">                    <div class="foto-pessoal">
                         <div class="container-foto">
-                            <div class="foto-placeholder">
-                                <i class="fas fa-user"></i>
-                                <p data-pt="Adicionar Foto" data-en="Add Photo">Adicionar Foto</p>
-                            </div>
-                            <!-- Descomente e adicione sua foto aqui -->
-                            <!-- <img src="assets/foto-joao-pedro.jpg" alt="João Pedro Moreira"> -->
+                            <img src="styles/images/1712079089515.jpeg" alt="João Pedro Moreira">
                         </div>
                     </div>
                     <div class="texto-sobre">
@@ -183,68 +176,143 @@
             <div class="container">
                 <h2 class="titulo-secao" data-pt="Formação Acadêmica" data-en="Education">Formação Acadêmica</h2>
                 <div class="conteudo-formacao">
-                    <div class="timeline-formacao">
-                        <div class="item-timeline">
-                            <div class="ano">2023 - 2027</div>
-                            <div class="conteudo-timeline">
-                                <h3 data-pt="Bacharelado em Cybersegurança" data-en="Bachelor's in Cybersecurity">Bacharelado em Cybersegurança</h3>
-                                <h4>PUCPR - Pontifícia Universidade Católica do Paraná</h4>
-                                <p data-pt="Curso focado em segurança da informação, análise de vulnerabilidades, criptografia, forense digital e governança de TI." data-en="Course focused on information security, vulnerability analysis, cryptography, digital forensics, and IT governance.">
-                                    Curso focado em segurança da informação, análise de vulnerabilidades, criptografia, forense digital e governança de TI.
-                                </p>
-                                <div class="materias-cursadas">
-                                    <h5 data-pt="Principais Disciplinas Cursadas:" data-en="Main Subjects Studied:">Principais Disciplinas Cursadas:</h5>
-                                    <div class="lista-materias">
-                                        <span>Fundamentos de Cybersegurança</span>
-                                        <span>Programação em Python</span>
-                                        <span>Redes de Computadores</span>
-                                        <span>Sistemas Operacionais</span>
-                                        <span>Banco de Dados</span>
-                                        <span>Matemática Computacional</span>
-                                        <span>Algoritmos e Estruturas</span>
-                                        <span>Arquitetura de Computadores</span>
+                    <!-- Informações Principais do Curso -->
+                    <div class="info-curso-principal">
+                        <div class="card-curso-principal">
+                            <div class="header-curso">
+                                <div class="icone-instituicao">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="info-basica">
+                                    <h3 data-pt="Bacharelado em Cybersegurança" data-en="Bachelor's in Cybersecurity">Bacharelado em Cybersegurança</h3>
+                                    <h4>PUCPR - Pontifícia Universidade Católica do Paraná</h4>
+                                    <div class="periodo">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>2023 - 2027</span>
                                     </div>
+                                </div>
+                            </div>
+                            
+                            <div class="descricao-curso">
+                                <p data-pt="Curso focado em segurança da informação, análise de vulnerabilidades, criptografia, forense digital e governança de TI. Formação sólida para atuar na proteção de sistemas e redes corporativas." data-en="Course focused on information security, vulnerability analysis, cryptography, digital forensics, and IT governance. Solid training to work in corporate systems and network protection.">
+                                    Curso focado em segurança da informação, análise de vulnerabilidades, criptografia, forense digital e governança de TI. Formação sólida para atuar na proteção de sistemas e redes corporativas.
+                                </p>
+                            </div>
+
+                            <!-- Progresso do Curso -->
+                            <div class="progresso-curso">
+                                <div class="info-progresso">
+                                    <span data-pt="Progresso do Curso" data-en="Course Progress">Progresso do Curso</span>
+                                    <span class="percentual">37.5%</span>
+                                </div>
+                                <div class="barra-progresso-curso">
+                                    <div class="progresso-preenchido" data-progresso="37.5"></div>
+                                </div>
+                                <p class="status-curso" data-pt="3° Período de 8 • Em progresso" data-en="3rd Semester of 8 • In progress">3° Período de 8 • Em progresso</p>
+                            </div>
+
+                            <!-- Estatísticas Acadêmicas -->
+                            <div class="estatisticas-academicas">
+                                <div class="stat-academica">
+                                    <div class="numero-stat">3</div>
+                                    <span data-pt="Período Atual" data-en="Current Semester">Período Atual</span>
+                                </div>
+                                <div class="stat-academica">
+                                    <div class="numero-stat">8</div>
+                                    <span data-pt="Total Períodos" data-en="Total Semesters">Total Períodos</span>
+                                </div>
+                                <div class="stat-academica">
+                                    <div class="numero-stat">15</div>
+                                    <span data-pt="Disciplinas Cursadas" data-en="Subjects Completed">Disciplinas Cursadas</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="experiencia-academica">
-                        <div class="card-experiencia">
-                            <div class="icone-experiencia">
-                                <i class="fas fa-graduation-cap"></i>
+
+                    <!-- Disciplinas e Competências -->
+                    <div class="disciplinas-competencias">
+                                               <!-- Áreas de Foco -->
+                        <div class="card-areas-foco">
+                            <div class="header-card">
+                                <i class="fas fa-bullseye"></i>
+                                <h3 data-pt="Áreas de Foco" data-en="Focus Areas">Áreas de Foco</h3>
                             </div>
-                            <h3 data-pt="Minha Jornada Acadêmica" data-en="My Academic Journey">Minha Jornada Acadêmica</h3>
-                            <div class="texto-experiencia">
-                                <p data-pt="Durante meu período na PUCPR, tenho vivenciado uma formação abrangente e prática em Cybersegurança. O curso me proporcionou desde fundamentos teóricos sólidos até experiências práticas com ferramentas e tecnologias atuais do mercado." data-en="During my time at PUCPR, I have experienced comprehensive and practical training in Cybersecurity. The course has provided me with solid theoretical foundations as well as practical experience with current market tools and technologies.">
-                                    Durante meu período na PUCPR, tenho vivenciado uma formação abrangente e prática em Cybersegurança. O curso me proporcionou desde fundamentos teóricos sólidos até experiências práticas com ferramentas e tecnologias atuais do mercado.
-                                </p>
-                                
-                                <h4 data-pt="Experiências Práticas" data-en="Practical Experiences">Experiências Práticas</h4>
-                                <ul>
-                                    <li data-pt="Laboratórios hands-on com ferramentas de penetration testing e análise de vulnerabilidades" data-en="Hands-on labs with penetration testing tools and vulnerability analysis">Laboratórios hands-on com ferramentas de penetration testing e análise de vulnerabilidades</li>
-                                    <li data-pt="Desenvolvimento de scripts em Python para automação de tarefas de segurança" data-en="Development of Python scripts for security task automation">Desenvolvimento de scripts em Python para automação de tarefas de segurança</li>
-                                    <li data-pt="Configuração e hardening de sistemas operacionais Linux e Windows" data-en="Configuration and hardening of Linux and Windows operating systems">Configuração e hardening de sistemas operacionais Linux e Windows</li>
-                                    <li data-pt="Análise forense digital e recuperação de dados em diferentes cenários" data-en="Digital forensic analysis and data recovery in different scenarios">Análise forense digital e recuperação de dados em diferentes cenários</li>
-                                    <li data-pt="Implementação de políticas de segurança e governança de TI" data-en="Implementation of security policies and IT governance">Implementação de políticas de segurança e governança de TI</li>
-                                </ul>
-                                
-                                <h4 data-pt="Projetos Acadêmicos" data-en="Academic Projects">Projetos Acadêmicos</h4>
-                                <p data-pt="Participei de diversos projetos que consolidaram meu aprendizado, incluindo simulações de ataques cibernéticos, desenvolvimento de soluções de monitoramento de rede, e criação de documentações técnicas de segurança." data-en="I participated in various projects that consolidated my learning, including cyber attack simulations, development of network monitoring solutions, and creation of technical security documentation.">
-                                    Participei de diversos projetos que consolidaram meu aprendizado, incluindo simulações de ataques cibernéticos, desenvolvimento de soluções de monitoramento de rede, e criação de documentações técnicas de segurança.
-                                </p>
-                                
-                                <div class="progresso-curso">
-                                    <div class="info-progresso">
-                                        <span data-pt="Progresso do Curso" data-en="Course Progress">Progresso do Curso</span>
-                                        <span class="percentual">37.5%</span>
+                            <div class="areas-foco-grid">
+                                <div class="area-foco-item">
+                                    <div class="icone-area">
+                                        <i class="fas fa-shield-alt"></i>
                                     </div>
-                                    <div class="barra-progresso-curso">
-                                        <div class="progresso-preenchido" data-progresso="37.5"></div>
+                                    <div class="info-area">
+                                        <h4 data-pt="Segurança de Redes" data-en="Network Security">Segurança de Redes</h4>
+                                        <p data-pt="Proteção e monitoramento de infraestruturas de rede" data-en="Protection and monitoring of network infrastructures">Proteção e monitoramento de infraestruturas de rede</p>
                                     </div>
-                                    <p class="status-curso" data-pt="3° Período de 8 • Em progresso" data-en="3rd Semester of 8 • In progress">3° Período de 8 • Em progresso</p>
+                                </div>
+                                <div class="area-foco-item">
+                                    <div class="icone-area">
+                                        <i class="fas fa-code"></i>
+                                    </div>
+                                    <div class="info-area">
+                                        <h4 data-pt="Desenvolvimento Seguro" data-en="Secure Development">Desenvolvimento Seguro</h4>
+                                        <p data-pt="Criação de aplicações com foco em segurança" data-en="Creating applications with a focus on security">Criação de aplicações com foco em segurança</p>
+                                    </div>
+                                </div>
+                                <div class="area-foco-item">
+                                    <div class="icone-area">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                    <div class="info-area">
+                                        <h4 data-pt="Análise de Vulnerabilidades" data-en="Vulnerability Analysis">Análise de Vulnerabilidades</h4>
+                                        <p data-pt="Identificação e correção de falhas de segurança" data-en="Identification and correction of security flaws">Identificação e correção de falhas de segurança</p>
+                                    </div>
+                                </div>                                <div class="area-foco-item">
+                                    <div class="icone-area">
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                    <div class="info-area">
+                                        <h4 data-pt="Criptografia" data-en="Cryptography">Criptografia</h4>
+                                        <p data-pt="Técnicas de proteção e cifragem de dados" data-en="Data protection and encryption techniques">Técnicas de proteção e cifragem de dados</p>
+                                    </div>
+                                </div>
+                                <div class="area-foco-item">
+                                    <div class="icone-area">
+                                        <i class="fas fa-bug"></i>
+                                    </div>
+                                    <div class="info-area">
+                                        <h4 data-pt="Forense Digital" data-en="Digital Forensics">Forense Digital</h4>
+                                        <p data-pt="Investigação e análise de evidências digitais" data-en="Investigation and analysis of digital evidence">Investigação e análise de evidências digitais</p>
+                                    </div>
+                                </div>
+                                <div class="area-foco-item">
+                                    <div class="icone-area">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <div class="info-area">
+                                        <h4 data-pt="Governança de TI" data-en="IT Governance">Governança de TI</h4>
+                                        <p data-pt="Gestão e compliance de tecnologia da informação" data-en="Information technology management and compliance">Gestão e compliance de tecnologia da informação</p>
+                                    </div>
+                                </div>
+                                <div class="area-foco-item">
+                                    <div class="icone-area">
+                                        <i class="fas fa-users-shield"></i>
+                                    </div>
+                                    <div class="info-area">
+                                        <h4 data-pt="Conscientização de Segurança" data-en="Security Awareness">Conscientização de Segurança</h4>
+                                        <p data-pt="Educação e treinamento em práticas seguras" data-en="Education and training in secure practices">Educação e treinamento em práticas seguras</p>
+                                    </div>
+                                </div>
+                                <div class="area-foco-item">
+                                    <div class="icone-area">
+                                        <i class="fas fa-server"></i>
+                                    </div>
+                                    <div class="info-area">
+                                        <h4 data-pt="Segurança em Nuvem" data-en="Cloud Security">Segurança em Nuvem</h4>
+                                        <p data-pt="Proteção de infraestruturas e dados na nuvem" data-en="Protection of cloud infrastructures and data">Proteção de infraestruturas e dados na nuvem</p>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+
+                        
                         </div>
                     </div>
                 </div>
@@ -393,13 +461,9 @@
                             <div class="contato-item">
                                 <i class="fab fa-linkedin"></i>
                                 <a href="https://www.linkedin.com/in/joaopedro-moreira/" target="_blank">linkedin.com/in/joaopedro-moreira</a>
-                            </div>
-                            <div class="contato-item">
+                            </div>                            <div class="contato-item">
                                 <i class="fab fa-github"></i>
                                 <a href="https://github.com/Sensews" target="_blank">github.com/Sensews</a>
-                            </div>                            <div class="contato-item">
-                                <i class="fab fa-discord"></i>
-                                <span>Discord: sensew</span>
                             </div>
                             <div class="contato-item">
                                 <i class="fas fa-map-marker-alt"></i>
