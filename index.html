@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Pedro Moreira - Portfólio Cybersegurança</title>
+    <link rel="stylesheet" href="styles/estilo-principal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="cabecalho">
+        <nav class="navegacao">        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <span data-pt="João Pedro" data-en="João Pedro">João Pedro</span>
+        </div>
+                  <ul class="menu-navegacao">
+            <li><a href="#inicio" data-pt="Início" data-en="Home">Início</a></li>
+            <li><a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
+            <li><a href="#formacao" data-pt="Formação" data-en="Education">Formação</a></li>
+            <li><a href="#habilidades" data-pt="Habilidades" data-en="Skills">Habilidades</a></li>
+            <li><a href="#projetos" data-pt="Projetos" data-en="Projects">Projetos</a></li>
+            <li><a href="#certificacoes" data-pt="Certificações" data-en="Certifications">Certificações</a></li>
+            <li><a href="#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
+        </ul>
+            
+            <button class="botao-configuracoes" id="botaoConfig">
+                <i class="fas fa-cog"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Modal de Configurações -->
+    <div id="modalConfiguracoes" class="modal">
+        <div class="conteudo-modal">
+            <div class="cabecalho-modal">
+                <h3 data-pt="Configurações" data-en="Settings">Configurações</h3>
+                <button class="fechar-modal" id="fecharModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="opcoes-configuracao">
+                <div class="opcao">
+                    <label data-pt="Tema:" data-en="Theme:">Tema:</label>
+                    <div class="botoes-tema">
+                        <button class="tema-botao" data-tema="claro">
+                            <i class="fas fa-sun"></i>
+                            <span data-pt="Claro" data-en="Light">Claro</span>
+                        </button>
+                        <button class="tema-botao ativo" data-tema="escuro">
+                            <i class="fas fa-moon"></i>
+                            <span data-pt="Escuro" data-en="Dark">Escuro</span>
+                        </button>
+                        <button class="tema-botao" data-tema="confortavel">
+                            <i class="fas fa-eye"></i>
+                            <span data-pt="Confortável" data-en="Comfort">Confortável</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="opcao">
+                    <label data-pt="Cor Secundária:" data-en="Secondary Color:">Cor Secundária:</label>
+                    <div class="seletor-cores">
+                        <div class="cor-opcao ativa" data-cor="#00ff88"></div>
+                        <div class="cor-opcao" data-cor="#ff6b35"></div>
+                        <div class="cor-opcao" data-cor="#4ecdc4"></div>
+                        <div class="cor-opcao" data-cor="#ffe66d"></div>
+                        <div class="cor-opcao" data-cor="#ff006e"></div>
+                        <div class="cor-opcao" data-cor="#8338ec"></div>
+                    </div>
+                </div>
+                
+                <div class="opcao">
+                    <label data-pt="Idioma:" data-en="Language:">Idioma:</label>
+                    <div class="botoes-idioma">
+                        <button class="idioma-botao ativo" data-idioma="pt">
+                            <img src="https://flagcdn.com/w20/br.png" alt="Português">
+                            Português
+                        </button>
+                        <button class="idioma-botao" data-idioma="en">
+                            <img src="https://flagcdn.com/w20/us.png" alt="English">
+                            English
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção Principal -->
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="secao-hero">
+            <div class="container-hero">
+                <div class="conteudo-hero">                <h1 class="titulo-principal">
+                    <span class="texto-cyber" data-pt="Olá, eu sou" data-en="Hello, I'm">Olá, eu sou</span>
+                    <span class="texto-destaque" data-pt="João Pedro Moreira" data-en="João Pedro Moreira">João Pedro Moreira</span>
+                </h1>
+                <p class="subtitulo" data-pt="Estudante de Cybersegurança na PUCPR • 3° Período • Apaixonado por tecnologia e segurança digital" data-en="Cybersecurity Student at PUCPR • 3rd Period • Passionate about technology and digital security">
+                    Estudante de Cybersegurança na PUCPR • 3° Período • Apaixonado por tecnologia e segurança digital
+                </p>                <div class="botoes-hero">
+                    <a href="#sobre" class="botao-primario" data-pt="Conheça minha jornada" data-en="Know my journey">Conheça minha jornada</a>
+                    <a href="#contato" class="botao-secundario" data-pt="Vamos conversar" data-en="Let's talk">Vamos conversar</a>
+                </div>
+                </div>
+                <div class="animacao-cyber">
+                    <div class="terminal-simulado">
+                        <div class="barra-terminal">
+                            <div class="botoes-terminal">
+                                <span class="botao-fechar"></span>
+                                <span class="botao-minimizar"></span>
+                                <span class="botao-maximizar"></span>
+                            </div>
+                        </div>
+                        <div class="conteudo-terminal">                            <div class="linha-comando">
+                                <span class="prompt">joao@pucpr:~$</span>
+                                <span class="comando" id="comandoAnimado"></span>
+                                <span class="cursor">|</span>
+                            </div>
+                            <div class="resultado-comando" id="resultadoComando"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>        <!-- Seção Sobre -->
+        <section id="sobre" class="secao-sobre">
+            <div class="container">
+                <h2 class="titulo-secao" data-pt="Sobre Mim" data-en="About Me">Sobre Mim</h2>
+                <div class="conteudo-sobre">
+                    <div class="foto-pessoal">
+                        <!-- Template para foto pessoal -->
+                        <div class="container-foto">
+                            <div class="foto-placeholder">
+                                <i class="fas fa-user"></i>
+                                <p data-pt="Adicionar Foto" data-en="Add Photo">Adicionar Foto</p>
+                            </div>
+                            <!-- Descomente e adicione sua foto aqui -->
+                            <!-- <img src="assets/foto-joao-pedro.jpg" alt="João Pedro Moreira"> -->
+                        </div>
+                    </div>
+                    <div class="texto-sobre">
+                        <p data-pt="Olá! Sou João Pedro Moreira, estudante de Cybersegurança na PUCPR, atualmente no 3° período. Sou apaixonado por tecnologia e segurança digital, sempre buscando aprender mais sobre proteção de sistemas e redes." data-en="Hello! I'm João Pedro Moreira, a Cybersecurity student at PUCPR, currently in my 3rd semester. I'm passionate about technology and digital security, always seeking to learn more about system and network protection.">
+                            Olá! Sou João Pedro Moreira, estudante de Cybersegurança na PUCPR, atualmente no 3° período. Sou apaixonado por tecnologia e segurança digital, sempre buscando aprender mais sobre proteção de sistemas e redes.
+                        </p>
+                        <p data-pt="Durante minha jornada acadêmica, tenho me dedicado ao estudo de diversas linguagens de programação como Python, Java, Rust e desenvolvimento web. Busco constantemente aplicar os conhecimentos teóricos em projetos práticos." data-en="During my academic journey, I have dedicated myself to studying various programming languages like Python, Java, Rust, and web development. I constantly seek to apply theoretical knowledge in practical projects.">
+                            Durante minha jornada acadêmica, tenho me dedicado ao estudo de diversas linguagens de programação como Python, Java, Rust e desenvolvimento web. Busco constantemente aplicar os conhecimentos teóricos em projetos práticos.
+                        </p>
+                        <div class="estatisticas-estudante">
+                            <div class="stat">
+                                <div class="numero" data-numero="3">0</div>
+                                <span data-pt="Período Atual" data-en="Current Semester">Período Atual</span>
+                            </div>
+                            <div class="stat">
+                                <div class="numero" data-numero="5">0</div>
+                                <span data-pt="Linguagens" data-en="Languages">Linguagens</span>
+                            </div>
+                            <div class="stat">
+                                <div class="numero" data-numero="20">0</div>
+                                <span data-pt="Projetos" data-en="Projects">Projetos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Formação -->
+        <section id="formacao" class="secao-formacao">
+            <div class="container">
+                <h2 class="titulo-secao" data-pt="Formação Acadêmica" data-en="Education">Formação Acadêmica</h2>
+                <div class="timeline-formacao">
+                    <div class="item-timeline">
+                        <div class="ano">2023 - 2027</div>
+                        <div class="conteudo-timeline">
+                            <h3 data-pt="Bacharelado em Cybersegurança" data-en="Bachelor's in Cybersecurity">Bacharelado em Cybersegurança</h3>
+                            <h4>PUCPR - Pontifícia Universidade Católica do Paraná</h4>
+                            <p data-pt="Curso focado em segurança da informação, análise de vulnerabilidades, criptografia, forense digital e governança de TI." data-en="Course focused on information security, vulnerability analysis, cryptography, digital forensics, and IT governance.">
+                                Curso focado em segurança da informação, análise de vulnerabilidades, criptografia, forense digital e governança de TI.
+                            </p>
+                            <div class="materias-cursadas">
+                                <h5 data-pt="Principais Disciplinas Cursadas:" data-en="Main Subjects Studied:">Principais Disciplinas Cursadas:</h5>
+                                <div class="lista-materias">
+                                    <span>Fundamentos de Cybersegurança</span>
+                                    <span>Programação em Python</span>
+                                    <span>Redes de Computadores</span>
+                                    <span>Sistemas Operacionais</span>
+                                    <span>Banco de Dados</span>
+                                    <span>Matemática Computacional</span>
+                                    <span>Algoritmos e Estruturas</span>
+                                    <span>Arquitetura de Computadores</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>        <!-- Seção Habilidades -->
+        <section id="habilidades" class="secao-habilidades">
+            <div class="container">
+                <h2 class="titulo-secao" data-pt="Habilidades & Tecnologias" data-en="Skills & Technologies">Habilidades & Tecnologias</h2>
+                <div class="grid-habilidades">
+                    <div class="card-habilidade">
+                        <div class="icone-habilidade">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h3>Python</h3>
+                        <p data-pt="Desenvolvimento de scripts para automação, análise de dados e ferramentas de segurança." data-en="Development of scripts for automation, data analysis, and security tools.">Desenvolvimento de scripts para automação, análise de dados e ferramentas de segurança.</p>
+                        <div class="barra-progresso">
+                            <div class="progresso" data-progresso="75"></div>
+                        </div>
+                    </div>
+
+                    <div class="card-habilidade">
+                        <div class="icone-habilidade">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <h3>Java</h3>
+                        <p data-pt="Programação orientada a objetos e desenvolvimento de aplicações robustas." data-en="Object-oriented programming and robust application development.">Programação orientada a objetos e desenvolvimento de aplicações robustas.</p>
+                        <div class="barra-progresso">
+                            <div class="progresso" data-progresso="65"></div>
+                        </div>
+                    </div>
+
+                    <div class="card-habilidade">
+                        <div class="icone-habilidade">
+                            <i class="fab fa-rust"></i>
+                        </div>
+                        <h3>Rust</h3>
+                        <p data-pt="Linguagem focada em performance e segurança de memória." data-en="Language focused on performance and memory safety.">Linguagem focada em performance e segurança de memória.</p>
+                        <div class="barra-progresso">
+                            <div class="progresso" data-progresso="45"></div>
+                        </div>
+                    </div>
+
+                    <div class="card-habilidade">
+                        <div class="icone-habilidade">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 data-pt="Desenvolvimento Web" data-en="Web Development">Desenvolvimento Web</h3>
+                        <p data-pt="HTML, CSS, JavaScript e frameworks modernos para criação de interfaces." data-en="HTML, CSS, JavaScript and modern frameworks for interface creation.">HTML, CSS, JavaScript e frameworks modernos para criação de interfaces.</p>
+                        <div class="barra-progresso">
+                            <div class="progresso" data-progresso="70"></div>
+                        </div>
+                    </div>
+
+                    <div class="card-habilidade">
+                        <div class="icone-habilidade">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 data-pt="Fundamentos de Segurança" data-en="Security Fundamentals">Fundamentos de Segurança</h3>
+                        <p data-pt="Conceitos básicos de cybersegurança, análise de vulnerabilidades e boas práticas." data-en="Basic cybersecurity concepts, vulnerability analysis, and best practices.">Conceitos básicos de cybersegurança, análise de vulnerabilidades e boas práticas.</p>
+                        <div class="barra-progresso">
+                            <div class="progresso" data-progresso="60"></div>
+                        </div>
+                    </div>
+
+                    <div class="card-habilidade">
+                        <div class="icone-habilidade">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3 data-pt="Redes de Computadores" data-en="Computer Networks">Redes de Computadores</h3>
+                        <p data-pt="Protocolos de rede, configuração e monitoramento de infraestrutura." data-en="Network protocols, configuration, and infrastructure monitoring.">Protocolos de rede, configuração e monitoramento de infraestrutura.</p>
+                        <div class="barra-progresso">
+                            <div class="progresso" data-progresso="55"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>        <!-- Seção Projetos -->
+        <section id="projetos" class="secao-projetos">
+            <div class="container">
+                <h2 class="titulo-secao" data-pt="Projetos Acadêmicos" data-en="Academic Projects">Projetos Acadêmicos</h2>
+                <div class="grid-projetos">
+                    <!-- Template para projeto -->
+                    <div class="card-projeto template-projeto">
+                        <div class="imagem-projeto">
+                            <div class="projeto-placeholder">
+                                <i class="fas fa-plus"></i>
+                                <p data-pt="Adicionar Projeto" data-en="Add Project">Adicionar Projeto</p>
+                            </div>
+                            <!-- Descomente e adicione imagem do projeto aqui -->
+                            <!-- <img src="assets/projeto1.jpg" alt="Nome do Projeto"> -->
+                        </div>
+                        <div class="conteudo-projeto">
+                            <h3 data-pt="[Nome do Projeto]" data-en="[Project Name]">[Nome do Projeto]</h3>
+                            <p data-pt="[Descrição do projeto acadêmico - explique brevemente o que foi desenvolvido e quais foram os objetivos]" data-en="[Academic project description - briefly explain what was developed and what were the objectives]">[Descrição do projeto acadêmico - explique brevemente o que foi desenvolvido e quais foram os objetivos]</p>
+                            <div class="tecnologias">
+                                <span>[Tecnologia 1]</span>
+                                <span>[Tecnologia 2]</span>
+                                <span>[Tecnologia 3]</span>
+                            </div>
+                            <div class="links-projeto">
+                                <a href="#" class="link-github" data-pt="Ver Código" data-en="View Code">
+                                    <i class="fab fa-github"></i> Ver Código
+                                </a>
+                                <a href="#" class="link-demo" data-pt="Ver Demo" data-en="View Demo">
+                                    <i class="fas fa-external-link-alt"></i> Ver Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-projeto">
+                        <div class="imagem-projeto">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="conteudo-projeto">
+                            <h3 data-pt="Sistema de Gerenciamento de Senhas" data-en="Password Management System">Sistema de Gerenciamento de Senhas</h3>
+                            <p data-pt="Aplicação Python para armazenamento seguro de senhas com criptografia AES e interface gráfica." data-en="Python application for secure password storage with AES encryption and graphical interface.">Aplicação Python para armazenamento seguro de senhas com criptografia AES e interface gráfica.</p>
+                            <div class="tecnologias">
+                                <span>Python</span>
+                                <span>Tkinter</span>
+                                <span>Cryptography</span>
+                            </div>
+                            <div class="links-projeto">
+                                <a href="#" class="link-github" data-pt="Ver Código" data-en="View Code">
+                                    <i class="fab fa-github"></i> Ver Código
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-projeto">
+                        <div class="imagem-projeto">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="conteudo-projeto">
+                            <h3 data-pt="Portfólio Pessoal" data-en="Personal Portfolio">Portfólio Pessoal</h3>
+                            <p data-pt="Site responsivo desenvolvido com HTML, CSS e JavaScript para apresentar projetos e habilidades." data-en="Responsive website developed with HTML, CSS and JavaScript to showcase projects and skills.">Site responsivo desenvolvido com HTML, CSS e JavaScript para apresentar projetos e habilidades.</p>
+                            <div class="tecnologias">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="links-projeto">
+                                <a href="#" class="link-github" data-pt="Ver Código" data-en="View Code">
+                                    <i class="fab fa-github"></i> Ver Código
+                                </a>
+                                <a href="#" class="link-demo" data-pt="Ver Site" data-en="View Site">
+                                    <i class="fas fa-external-link-alt"></i> Ver Site
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-projeto">
+                        <div class="imagem-projeto">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="conteudo-projeto">
+                            <h3 data-pt="Sistema de Biblioteca" data-en="Library System">Sistema de Biblioteca</h3>
+                            <p data-pt="Aplicação Java para gerenciamento de bibliotecas com banco de dados MySQL e interface Swing." data-en="Java application for library management with MySQL database and Swing interface.">Aplicação Java para gerenciamento de bibliotecas com banco de dados MySQL e interface Swing.</p>
+                            <div class="tecnologias">
+                                <span>Java</span>
+                                <span>MySQL</span>
+                                <span>Swing</span>
+                            </div>
+                            <div class="links-projeto">
+                                <a href="#" class="link-github" data-pt="Ver Código" data-en="View Code">
+                                    <i class="fab fa-github"></i> Ver Código
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Certificações -->
+        <section id="certificacoes" class="secao-certificacoes">
+            <div class="container">
+                <h2 class="titulo-secao" data-pt="Certificações" data-en="Certifications">Certificações</h2>
+                <div class="grid-certificacoes">
+                    <!-- Template para certificação -->
+                    <div class="card-certificacao template-certificacao">
+                        <div class="badge-certificacao">
+                            <div class="certificacao-placeholder">
+                                <i class="fas fa-certificate"></i>
+                                <p data-pt="Adicionar Certificação" data-en="Add Certification">Adicionar Certificação</p>
+                            </div>
+                        </div>
+                        <div class="info-certificacao">
+                            <h3 data-pt="[Nome da Certificação]" data-en="[Certification Name]">[Nome da Certificação]</h3>
+                            <p class="emissor" data-pt="[Instituição Emissora]" data-en="[Issuing Institution]">[Instituição Emissora]</p>
+                            <p class="data-certificacao" data-pt="[Data de Emissão]" data-en="[Issue Date]">[Data de Emissão]</p>
+                            <div class="acoes-certificacao">
+                                <a href="#" class="link-verificar" data-pt="Verificar Certificado" data-en="Verify Certificate">
+                                    <i class="fas fa-check-circle"></i> Verificar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-certificacao em-progresso">
+                        <div class="badge-certificacao">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="info-certificacao">
+                            <h3 data-pt="CompTIA Security+" data-en="CompTIA Security+">CompTIA Security+</h3>
+                            <p class="emissor">CompTIA</p>
+                            <p class="status" data-pt="Em preparação - Previsão: Junho 2025" data-en="In preparation - Expected: June 2025">Em preparação - Previsão: Junho 2025</p>
+                        </div>
+                    </div>
+
+                    <div class="card-certificacao em-progresso">
+                        <div class="badge-certificacao">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <div class="info-certificacao">
+                            <h3 data-pt="AWS Cloud Practitioner" data-en="AWS Cloud Practitioner">AWS Cloud Practitioner</h3>
+                            <p class="emissor">Amazon Web Services</p>
+                            <p class="status" data-pt="Planejado para 2025" data-en="Planned for 2025">Planejado para 2025</p>
+                        </div>
+                    </div>
+
+                    <div class="card-certificacao em-progresso">
+                        <div class="badge-certificacao">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="info-certificacao">
+                            <h3 data-pt="Certificado PUCPR - Cybersegurança" data-en="PUCPR Certificate - Cybersecurity">Certificado PUCPR - Cybersegurança</h3>
+                            <p class="emissor">PUCPR</p>
+                            <p class="status" data-pt="Previsão: Dezembro 2027" data-en="Expected: December 2027">Previsão: Dezembro 2027</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>        <!-- Seção Contato -->
+        <section id="contato" class="secao-contato">
+            <div class="container">
+                <h2 class="titulo-secao" data-pt="Entre em Contato" data-en="Get in Touch">Entre em Contato</h2>
+                <div class="conteudo-contato">
+                    <div class="info-contato">
+                        <h3 data-pt="Vamos conversar!" data-en="Let's talk!">Vamos conversar!</h3>
+                        <p data-pt="Estou sempre aberto a novas oportunidades de aprendizado, projetos acadêmicos e networking profissional." data-en="I'm always open to new learning opportunities, academic projects, and professional networking.">Estou sempre aberto a novas oportunidades de aprendizado, projetos acadêmicos e networking profissional.</p>
+                        
+                        <div class="contatos">
+                            <div class="contato-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>joao.pedro@estudante.pucpr.br</span>
+                            </div>
+                            <div class="contato-item">
+                                <i class="fab fa-linkedin"></i>
+                                <span>linkedin.com/in/joaopedro-cybersec</span>
+                            </div>
+                            <div class="contato-item">
+                                <i class="fab fa-github"></i>
+                                <span>github.com/joaopedro-cyber</span>
+                            </div>
+                            <div class="contato-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-pt="Curitiba, Paraná - Brasil" data-en="Curitiba, Paraná - Brazil">Curitiba, Paraná - Brasil</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form class="formulario-contato">
+                        <div class="grupo-input">
+                            <input type="text" id="nome" required>
+                            <label for="nome" data-pt="Nome" data-en="Name">Nome</label>
+                        </div>
+                        <div class="grupo-input">
+                            <input type="email" id="email" required>
+                            <label for="email" data-pt="E-mail" data-en="E-mail">E-mail</label>
+                        </div>
+                        <div class="grupo-input">
+                            <input type="text" id="assunto" required>
+                            <label for="assunto" data-pt="Assunto" data-en="Subject">Assunto</label>
+                        </div>
+                        <div class="grupo-input">
+                            <textarea id="mensagem" required></textarea>
+                            <label for="mensagem" data-pt="Mensagem" data-en="Message">Mensagem</label>
+                        </div>
+                        <button type="submit" class="botao-enviar">
+                            <span data-pt="Enviar Mensagem" data-en="Send Message">Enviar Mensagem</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>    <!-- Footer -->
+    <footer id="rodape">
+        <div class="container">
+            <div class="conteudo-rodape">
+                <div class="logo-rodape">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span data-pt="João Pedro Moreira" data-en="João Pedro Moreira">João Pedro Moreira</span>
+                </div>
+                <div class="redes-sociais">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+            <div class="direitos-autorais">
+                <p>&copy; 2025 João Pedro Moreira. <span data-pt="Estudante de Cybersegurança - PUCPR." data-en="Cybersecurity Student - PUCPR.">Estudante de Cybersegurança - PUCPR.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/configuracoes.js"></script>
+    <script src="scripts/animacoes.js"></script>
+    <script src="scripts/principal.js"></script>
+</body>
+</html>
