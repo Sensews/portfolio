@@ -13,17 +13,22 @@ html {
     /* Variáveis de cores - Tema Escuro (padrão) */
     --cor-primaria: #0a0a0a;
     --cor-secundaria: #00ff88;
+    --cor-secundaria-rgb: 0, 255, 136;
     --cor-fundo: #0f0f0f;
-    --cor-fundo-secundario: #1a1a1a;
+    --cor-fundo-secundario: #1a1a1a80;
     --cor-texto: #ffffff;
     --cor-texto-secundario: #b3b3b3;
     --cor-borda: #333333;
     --cor-hover: #252525;
-    --cor-shadow: rgba(0, 255, 136, 0.2);
+    
+    /* Efeitos e variações */
+    --cor-shadow: rgba(var(--cor-secundaria-rgb), 0.3);
+    --cor-glow: rgba(var(--cor-secundaria-rgb), 0.5);
     
     /* Gradientes */
     --gradiente-primario: linear-gradient(135deg, var(--cor-primaria), var(--cor-fundo-secundario));
-    --gradiente-secundario: linear-gradient(135deg, var(--cor-secundaria), #00cc6a);
+    --gradiente-secundario: linear-gradient(135deg, var(--cor-secundaria), var(--cor-secundaria));
+    --gradiente-hover: linear-gradient(135deg, var(--cor-secundaria), var(--cor-secundaria));
     --gradiente-hero: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
     
     /* Fontes */
@@ -43,12 +48,12 @@ html {
 [data-tema="claro"] {
     --cor-primaria: #ffffff;
     --cor-fundo: #f8f9fa;
-    --cor-fundo-secundario: #ffffff;
+    --cor-fundo-secundario: #ffffff80;
     --cor-texto: #2c2c2c;
     --cor-texto-secundario: #666666;
     --cor-borda: #e0e0e0;
     --cor-hover: #f0f0f0;
-    --cor-shadow: rgba(0, 255, 136, 0.3);
+    --cor-shadow: rgba(var(--cor-secundaria-rgb), 0.3);
     --gradiente-primario: linear-gradient(135deg, #ffffff, #f8f9fa);
     --gradiente-hero: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
     --sombra-card: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -57,12 +62,12 @@ html {
 [data-tema="confortavel"] {
     --cor-primaria: #1e3a8a;
     --cor-fundo: #0f172a;
-    --cor-fundo-secundario: #1e293b;
+    --cor-fundo-secundario: #1e293b80;
     --cor-texto: #f1f5f9;
     --cor-texto-secundario: #cbd5e1;
     --cor-borda: #334155;
     --cor-hover: #2563eb;
-    --cor-shadow: rgba(0, 255, 136, 0.25);
+    --cor-shadow: rgba(var(--cor-secundaria-rgb), 0.3);
     --gradiente-primario: linear-gradient(135deg, #1e3a8a, #1e293b);
     --gradiente-hero: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
 }
@@ -209,14 +214,14 @@ body.menu-aberto {
 }
 
 .menu-navegacao a:hover {
-    color: var(--cor-secundaria);
-    background: rgba(0, 255, 136, 0.1);
+    color: white;
+    background: var(--cor-secundaria);
     transform: translateY(-2px);
 }
 
 .menu-navegacao a.ativo {
-    color: var(--cor-secundaria);
-    background: rgba(0, 255, 136, 0.15);
+    color: white;
+    background: var(--cor-secundaria);
 }
 
 .botao-configuracoes {
@@ -234,7 +239,7 @@ body.menu-aberto {
     height: 48px;
     position: relative;
     overflow: hidden;
-    margin-left: 10px;
+    margin-left: 15px;
 }
 
 .botao-configuracoes::before {
@@ -259,7 +264,7 @@ body.menu-aberto {
 .botao-configuracoes:hover {
     border-color: var(--cor-secundaria);
     color: var(--cor-secundaria);
-    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.2);
+    box-shadow: 0 0 20px var(--cor-secundaria);
     transform: translateY(-2px) rotate(90deg);
 }
 
@@ -655,9 +660,9 @@ body.menu-aberto {
     right: 0;
     bottom: 0;
     background-image: 
-        radial-gradient(circle at 20% 50%, rgba(0, 255, 136, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(0, 255, 136, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(0, 255, 136, 0.08) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(var(--cor-secundaria-rgb), 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(var(--cor-secundaria-rgb), 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(var(--cor-secundaria-rgb), 0.08) 0%, transparent 50%);
     animation: float 20s ease-in-out infinite;
 }
 
@@ -701,8 +706,12 @@ body.menu-aberto {
 }
 
 @keyframes glow-text {
-    from { filter: drop-shadow(0 0 10px var(--cor-secundaria)); }
-    to { filter: drop-shadow(0 0 20px var(--cor-secundaria)); }
+    0%, 100% {
+        text-shadow: 0 0 10px var(--cor-shadow);
+    }
+    50% {
+        text-shadow: 0 0 20px var(--cor-glow);
+    }
 }
 
 .subtitulo {
@@ -728,17 +737,17 @@ body.menu-aberto {
     align-items: center;
     justify-content: center;
     min-width: 150px;
+    color: var(--cor-primaria);
 }
 
 .botao-primario {
-    background: var(--gradiente-secundario);
-    color: var(--cor-primaria);
-    box-shadow: var(--sombra-cyber);
+    background: var(--cor-secundaria);
+    transition: var(--transicao-padrao);
 }
 
 .botao-primario:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 40px var(--cor-shadow);
+    background: var(--cor-secundaria);
+    box-shadow: 0 0 15px var(--cor-shadow);
 }
 
 .botao-secundario {
@@ -761,18 +770,22 @@ body.menu-aberto {
 }
 
 .terminal-simulado {
-    background: #000;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: var(--sombra-card);
-    width: 100%;
-    max-width: 500px;
-    animation: terminal-glow 4s ease-in-out infinite;
+    background: var(--cor-primaria);
+    border: 1px solid var(--cor-borda);
+    box-shadow: 0 0 20px var(--cor-shadow);
 }
 
-@keyframes terminal-glow {
-    0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 136, 0.3); }
-    50% { box-shadow: 0 0 40px rgba(0, 255, 136, 0.6); }
+.prompt, .cursor {
+    color: var(--cor-secundaria);
+}
+
+@keyframes glow-text {
+    0%, 100% {
+        text-shadow: 0 0 10px var(--cor-shadow);
+    }
+    50% {
+        text-shadow: 0 0 20px var(--cor-glow);
+    }
 }
 
 .barra-terminal {
@@ -796,7 +809,7 @@ body.menu-aberto {
 .conteudo-terminal {
     padding: 1.5rem;
     background: #000;
-    color: #00ff88;
+    color: var(--cor-secundaria);
     font-family: 'Courier New', monospace;
     min-height: 200px;
 }
@@ -809,7 +822,7 @@ body.menu-aberto {
 }
 
 .prompt {
-    color: #00ff88;
+    color: var(--cor-secundaria);
     font-weight: bold;
 }
 
@@ -819,7 +832,7 @@ body.menu-aberto {
 
 .cursor {
     animation: blink 1s infinite;
-    color: #00ff88;
+    color: var(--cor-secundaria);
 }
 
 @keyframes blink {
@@ -975,7 +988,7 @@ body.menu-aberto {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, var(--cor-secundaria), transparent);
     transition: left 0.6s ease;
 }
 
@@ -1331,8 +1344,8 @@ body.menu-aberto {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 25% 25%, rgba(0, 255, 136, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(0, 255, 136, 0.02) 0%, transparent 50%);
+        radial-gradient(circle at 25% 25%, rgba(var(--cor-secundaria-rgb), 0.03) 0%, transparent 20%),
+        radial-gradient(circle at 75% 75%, rgba(var(--cor-secundaria-rgb), 0.02) 0%, transparent 20%);
     pointer-events: none;
 }
 
@@ -1358,7 +1371,7 @@ body.menu-aberto {
     transition: var(--transicao-padrao);
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column
 }
 
 .card-curso-principal:hover {
@@ -1386,7 +1399,7 @@ body.menu-aberto {
     color: var(--cor-primaria);
     flex-shrink: 0;
     animation: pulse-icon 3s ease-in-out infinite;
-    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.3);
+    box-shadow: 0 8px 25px rgba(var(--cor-secundaria-rgb), 0.3);
 }
 
 @keyframes pulse-icon {
@@ -1477,7 +1490,7 @@ body.menu-aberto {
     width: 0%;
     transition: width 2s ease-in-out;
     position: relative;
-    box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+    box-shadow: 0 0 10px var(--cor-secundaria);
 }
 
 .progresso-preenchido::after {
@@ -1519,7 +1532,7 @@ body.menu-aberto {
 .stat-academica:hover {
     border-color: var(--cor-secundaria);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2);
+    box-shadow: 0 4px 15px var(--cor-secundaria);
 }
 
 .numero-stat {
@@ -1626,7 +1639,7 @@ body.menu-aberto {
 }
 
 .disciplina-status.concluida {
-    background: rgba(0, 255, 136, 0.2);
+    background: var(--cor-secundaria);
     color: var(--cor-secundaria);
     border: 1px solid var(--cor-secundaria);
 }

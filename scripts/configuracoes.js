@@ -91,22 +91,32 @@ class GerenciadorConfiguracoes {
         // Log para debug
         console.log(`Tema alterado para: ${novoTema}`);
     }
-    
-    // Altera a cor secundária
+      // Altera a cor secundária
     alterarCorSecundaria(novaCor) {
         this.configuracoes.corSecundaria = novaCor;
+        
+        // Cor principal
         document.documentElement.style.setProperty('--cor-secundaria', novaCor);
         
-        // Atualiza gradientes que usam a cor secundária
-        const gradienteSecundario = `linear-gradient(135deg, ${novaCor}, ${this.ajustarCor(novaCor, -20)})`;
-        document.documentElement.style.setProperty('--gradiente-secundario', gradienteSecundario);
-        
-        // Atualiza sombra cyber
+        // Converter cor para RGB para uso em transparências
         const sombra = novaCor.replace('#', '').match(/.{2}/g);
         const rgb = sombra.map(x => parseInt(x, 16)).join(', ');
+        document.documentElement.style.setProperty('--cor-secundaria-rgb', rgb);
+        
+        // Gerar variações da cor para gradientes
+        const corMaisEscura = this.ajustarCor(novaCor, -20);
+        const corMaisClara = this.ajustarCor(novaCor, 20);
+        
+        // Atualizar gradientes
+        document.documentElement.style.setProperty('--gradiente-secundario', `linear-gradient(135deg, ${novaCor}, ${corMaisEscura})`);
+        document.documentElement.style.setProperty('--gradiente-hover', `linear-gradient(135deg, ${corMaisClara}, ${novaCor})`);
+        
+        // Atualizar sombras e glows
         document.documentElement.style.setProperty('--cor-shadow', `rgba(${rgb}, 0.3)`);
+        document.documentElement.style.setProperty('--cor-glow', `rgba(${rgb}, 0.5)`);
         
         this.salvarConfiguracoes();
+        this.atualizarInterfaceControles();
         
         console.log(`Cor secundária alterada para: ${novaCor}`);
     }
